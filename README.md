@@ -17,25 +17,21 @@ Keep in mind this is **experimental** so things will probably break, and you can
 
 ```bash
 $ frenzy up
-[docker] up frenzy01
-[docker] up frenzy02
-[frenzy01] Running inline SSH provisioner
-[frenzy02] Running inline SSH provisioner
-[frenzy01] Hello World
-[frenzy01] Mon Mar 24 15:48:19 UTC 2014
-[frenzy01] Running inline SSH provisioner
-[frenzy01] This comes from another provisioner
-[frenzy02] Hello World
-[frenzy02] Mon Mar 24 15:48:20 UTC 2014
-[frenzy02] Running inline SSH provisioner
-[frenzy02] This comes from another provisioner
+# [docker] up frenzy01
+# [docker] up frenzy02
+# [frenzy01] Running inline SSH provisioner
+# [frenzy02] Running inline SSH provisioner
+# [frenzy01] Hello World
+# [frenzy01] Mon Mar 24 15:48:19 UTC 2014
+# [frenzy02] Hello World
+# [frenzy02] Mon Mar 24 15:48:20 UTC 2014
 $ frenzy status
-HOSTNAME  STATUS   CONTAINER ID  PORT
-frenzy01  running  0dddebd56caa  49167
-frenzy02  running  59ca6e6c00d2  49166
+# HOSTNAME  STATUS   CONTAINER ID  PORT
+# frenzy01  running  0dddebd56caa  49167
+# frenzy02  running  59ca6e6c00d2  49166
 $ frenzy destroy
-[docker] destroying frenzy01, id: 0dddebd56caa
-[docker] destroying frenzy02, id: 59ca6e6c00d2
+# [docker] destroying frenzy01, id: 0dddebd56caa
+# [docker] destroying frenzy02, id: 59ca6e6c00d2
 ```
 
 ## Install

@@ -23,7 +23,7 @@ func (p *Provider) Up(hostname string) (*pkg.NodeInfo, error) {
 			"run",
 			"-d",
 			"-p", "22",
-			"-name", hostname,
+			"--name", hostname,
 			p.Image,
 			"/usr/sbin/sshd", "-D",
 		},

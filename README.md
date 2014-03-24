@@ -13,6 +13,31 @@ I could have use docker-provider or even vagrant-lxc but to be honest I also wan
 
 Keep in mind this is **experimental** so things will probably break, and you can't do much yet.
 
+## Usage
+
+```bash
+$ frenzy up
+[docker] up frenzy01
+[docker] up frenzy02
+[frenzy01] Running inline SSH provisioner
+[frenzy02] Running inline SSH provisioner
+[frenzy01] Hello World
+[frenzy01] Mon Mar 24 15:48:19 UTC 2014
+[frenzy01] Running inline SSH provisioner
+[frenzy01] This comes from another provisioner
+[frenzy02] Hello World
+[frenzy02] Mon Mar 24 15:48:20 UTC 2014
+[frenzy02] Running inline SSH provisioner
+[frenzy02] This comes from another provisioner
+$ frenzy status
+HOSTNAME  STATUS   CONTAINER ID  PORT
+frenzy01  running  0dddebd56caa  49167
+frenzy02  running  59ca6e6c00d2  49166
+$ frenzy destroy
+[docker] destroying frenzy01, id: 0dddebd56caa
+[docker] destroying frenzy02, id: 59ca6e6c00d2
+```
+
 ## Install
 
 ### From source
@@ -56,5 +81,6 @@ Make sure you have Docker [installed](http://docs.docker.io/en/latest/installati
 * Move to Docker API instead of Docker CLI
 * In progress: Stop command (commit container with image name == node name)
 * In progress: Chef provisioner
+* Better logging (colored output would be nice)
 * Support for volumes
 * More networking options

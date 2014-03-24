@@ -33,12 +33,13 @@ For now you'll have to build it yourself.
 
 ```bash
 $ # Install [boot2docker](https://github.com/boot2docker/boot2docker)
-$
+$ boot2docker stop
 $ # Forward VM port range that Docker uses to host
 $ for i in {49000..49900}; do
 $   VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port$i,tcp,,$i,,$i";
 $   VBoxManage modifyvm "boot2docker-vm" --natpf1 "udp-port$i,udp,,$i,,$i";
 $ done
+$ boot2docker start
 ```
 
 ### Linux

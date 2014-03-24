@@ -1,10 +1,10 @@
 package commands
 
 import (
+	"fmt"
 	"github.com/stevedomin/cli"
 	"github.com/stevedomin/frenzy/pkg"
 	"github.com/stevedomin/frenzy/pkg/environment"
-	"log"
 	"sync"
 )
 
@@ -19,15 +19,15 @@ func Destroy(env *environment.Environment) *cli.Command {
 				if node.Status != "not running" {
 					err := node.Provider.Destroy(node.Hostname, node.ID)
 					if err != nil {
-						log.Println(err)
+						fmt.Println(err)
 					}
 				} else {
-					log.Printf("[%s] already destroyed", node.Hostname)
+					fmt.Printf("[%s] already destroyed\n", node.Hostname)
 				}
 
 				err := env.DestroyState()
 				if err != nil {
-					log.Println(err)
+					fmt.Println(err)
 				}
 			}(node)
 		}

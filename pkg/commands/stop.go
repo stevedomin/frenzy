@@ -1,15 +1,15 @@
 package commands
 
 import (
+	"fmt"
 	"github.com/stevedomin/cli"
 	"github.com/stevedomin/frenzy/pkg/environment"
-	"log"
 )
 
 func Stop(env *environment.Environment) *cli.Command {
 	stopCmd := cli.NewCommand("stop")
 	stopCmd.HandlerFunc = func(args []string) {
-		log.Printf("not yet implemented")
+		fmt.Printf("not yet implemented\n")
 		// Docker commit container?
 		// Docker stop
 		// defer env.SaveState()

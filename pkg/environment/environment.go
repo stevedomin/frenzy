@@ -111,7 +111,6 @@ func (e *Environment) LoadState() {
 }
 
 func (e *Environment) SaveState() error {
-	log.Println("Saving environment...")
 	e.State.Nodes = []*NodeState{}
 	for _, node := range e.Nodes {
 		n := &NodeState{

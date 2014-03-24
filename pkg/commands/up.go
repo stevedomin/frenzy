@@ -1,10 +1,10 @@
 package commands
 
 import (
+	"fmt"
 	"github.com/stevedomin/cli"
 	"github.com/stevedomin/frenzy/pkg"
 	"github.com/stevedomin/frenzy/pkg/environment"
-	"log"
 	"sync"
 )
 
@@ -25,7 +25,7 @@ func Up(env *environment.Environment) *cli.Command {
 				if node.Status != "running" {
 					nodeInfo, err := node.Provider.Up(node.Hostname)
 					if err != nil {
-						log.Println(err)
+						fmt.Println(err)
 						return
 					}
 
@@ -34,7 +34,7 @@ func Up(env *environment.Environment) *cli.Command {
 					node.Port = nodeInfo.Port
 					node.Status = "running"
 				} else {
-					log.Printf("[%s] already running", node.Hostname)
+					fmt.Printf("[%s] already running\n", node.Hostname)
 				}
 
 				if flagProvision {
@@ -47,7 +47,7 @@ func Up(env *environment.Environment) *cli.Command {
 		wg.Wait()
 
 		if err := env.SaveState(); err != nil {
-			log.Println(err)
+			fmt.Println(err)
 		}
 	}
 	return upCmd

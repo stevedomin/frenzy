@@ -1,8 +1,8 @@
 package shell
 
 import (
+	"fmt"
 	"github.com/stevedomin/frenzy/pkg"
-	"log"
 )
 
 type Provisioner struct {
@@ -10,10 +10,10 @@ type Provisioner struct {
 }
 
 func (p *Provisioner) Run(node *pkg.Node) {
-	log.Printf("[%s] Running inline SSH provisioner", node.Hostname)
+	fmt.Printf("[%s] Running inline SSH provisioner\n", node.Hostname)
 
 	for _, inline := range p.Inline {
 		output := node.GetCommunicator().Run(inline)
-		log.Printf("[%s] %s", node.Hostname, output)
+		fmt.Printf("[%s] %s", node.Hostname, output)
 	}
 }

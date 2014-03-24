@@ -1,0 +1,35 @@
+{
+  "defaults": {
+    "provider": {
+      "docker": {
+        "image": "stevedomin/fzy-ubuntu:12.04"
+      }
+    },
+    "provisioners": [
+      {
+        "type": "shell",
+        "inline": [
+          "/bin/echo Hello World",
+          "/bin/date"
+        ]
+      },
+      {
+        "type": "shell",
+        "inline": [
+          "/bin/echo This comes from another provisioner"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "hostname": "frenzy01"
+    },
+    {
+      "hostname": "frenzy02"
+    },
+    {
+      "hostname": "frenzy03"
+    }
+  ]
+}

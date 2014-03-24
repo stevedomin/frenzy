@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/stevedomin/frenzy/pkg"
-	"log"
 	"os/exec"
 	"strings"
 )
@@ -14,7 +13,7 @@ type Provider struct {
 }
 
 func (p *Provider) Up(hostname string) (*pkg.NodeInfo, error) {
-	log.Printf("[docker] up %s", hostname)
+	fmt.Printf("[docker] up %s\n", hostname)
 	var outBuf, errBuf bytes.Buffer
 
 	err := p.cmd(
@@ -62,7 +61,7 @@ func (p *Provider) Stop(hostname, ID string) error {
 }
 
 func (p *Provider) Destroy(hostname, ID string) error {
-	log.Printf("[docker] destroying %s, id: %s", hostname, ID[:12])
+	fmt.Printf("[docker] destroying %s, id: %s\n", hostname, ID[:12])
 	var outBuf, errBuf bytes.Buffer
 
 	err := p.cmd(

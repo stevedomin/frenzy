@@ -5,13 +5,13 @@ Experimental Vagrant clone written in Go and using Docker instead of VBox.
 
 ## Why?
 
-Vagrant is an awesome tool but because it's using VMs it's quite slow.  
-If you use it to, for example, test your Chef cookbooks (my case), you quickly loose a lot of time during the day... waiting...  
-I wondered if I could build something that would do the same job but much faster, by using containers instead of VMs.
+Vagrant is an awesome tool, but it's quite slow - because it uses VMs.
+For example, if you use it to test your Chef cookbooks (like I do), you quickly lose a lot of time just waiting.
+I wanted to build something that would do the same thing but much faster by using containers instead of VMs.
 
-Another thing that really mattered to me was parallel booting and provisioning, I'm working on a new automation tool and I wanted to be able to spin up a fairly large numbers of node quickly. Thanks to the power of containers, now I can.
+Another thing that really mattered to me was parallel booting and provisioning; I'm working on a new automation tool, and I wanted to be able to spin up a fairly large numbers of nodes quickly. Thanks to the power of containers, I now can.
 
-I could have used docker-provider or even vagrant-lxc but to be honest I also wanted to have some fun :)
+I could have used docker-provider or even vagrant-lxc but, to be honest, I also wanted to have some fun :)
 
 Keep in mind this is **experimental** so things will probably break, and you can't do much yet.
 

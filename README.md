@@ -17,6 +17,9 @@ Keep in mind this is **experimental** so things will probably break, and you can
 
 ## Usage
 
+* Create a 'Frenzyfile' in a test directory (you can find an example in the example/ directory)
+* Pull the image (e.g. `docker pull stevedomin/fzy-ubuntu`)
+
 ```bash
 $ frenzy up
 # [docker] up frenzy01
@@ -72,6 +75,7 @@ Make sure you have Docker [installed](http://docs.docker.io/en/latest/installati
 ## Known caveats
 
 * You need to be able to execute docker commands without sudo
+* If you don't pull the image specified in your Frenzyfile manually before using it, the first `frenzy up` will hang while Docker is downloading the image.
 
 ## TODO
 
